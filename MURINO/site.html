@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>МУРИНО</title>
+
+   <style>
+    body {
+        background-color: #1a1c1a; 
+        background-image: 
+            url('https://www.transparenttextures.com/patterns/stardust.png'), 
+            radial-gradient(circle, #2b302b 0%, #161a16 100%);
+        color: #a3ad97; 
+        font-family: 'Courier New', Courier, monospace;
+        margin: 0;
+        padding: 0;
+    }
+
+    header {
+        border-bottom: 2px solid #3e473e;
+        padding: 40px 20px;
+        text-align: center;
+        background: rgba(20, 25, 20, 0.8);
+    }
+
+    h1 {
+        font-size: 1.6rem;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        color: #78856b; 
+        margin-bottom: 20px;
+    }
+
+    /* СТИЛЬ ПОИСКА */
+    .search-container {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-bottom: 10px;
+    }
+
+    .search-input {
+        background: #252b25;
+        border: 1px solid #3e473e;
+        color: #a3ad97;
+        padding: 10px 15px;
+        width: 300px;
+        font-family: inherit;
+        outline: none;
+    }
+
+    .search-button {
+        background: #3e473e;
+        border: none;
+        color: #a3ad97;
+        padding: 10px 20px;
+        cursor: pointer;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    main {
+        max-width: 900px; 
+        margin: 30px auto;
+        padding: 20px;
+    }
+
+    .document-card {
+        background: #202420; 
+        border: 1px solid #343d34;
+        padding: 25px;
+        margin-bottom: 40px;
+        box-shadow: 10px 10px 20px rgba(0,0,0,0.5);
+        position: relative;
+        overflow: hidden; /* Удерживает картинку внутри карточки */
+    }
+
+    .document-card h2 {
+        margin-top: 0;
+        border-bottom: 1px solid #3e473e;
+        padding-bottom: 10px;
+        margin-bottom: 15px;
+    }
+
+    /* ФОТО ТЕПЕРЬ МЕНЬШЕ (250px) */
+    .photo-wrap {
+        float: left;
+        width: 250px; 
+        margin: 0 20px 10px 0;
+        border: 1px solid #3e473e;
+        background: #000;
+        padding: 5px;
+    }
+
+    .photo-wrap img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    .document-content {
+        line-height: 1.6;
+        text-align: left;
+    }
+
+    /* ИСПРАВЛЕНИЕ НИЖНЕЙ НАДПИСИ */
+    footer {
+        clear: both; /* Сбрасывает все обтекания, чтобы надпись не съезжала */
+        text-align: center;
+        padding: 60px 20px;
+        color: #4e5a4e;
+        font-weight: bold;
+        letter-spacing: 2px;
+    }
+
+    .document-card::after {
+        content: "Research Group";
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        font-size: 0.8rem;
+        color: #4b2525; 
+        border: 2px solid #4b2525;
+        padding: 3px 10px;
+        transform: rotate(5deg);
+        opacity: 1;
+    }
+</style>
+        
+    </style>
+</head>
+<body>
+
+    <div class="vhs-overlay"></div>
+
+    <header>
+        <h1>МУРИНО</h1>
+        <h3>Ты здесь был и до сих пор никуда не ушел...</h3>
+        <div class="search-container">
+        <input type="text" id="searchInput" class="search-input" placeholder="КТО В СПИСКЕ?..">
+        <button class="search-button" onclick="runSearch()">НАЙТИ</button>
+    </div>
+    </header>
+
+    <main>
+        
+<article class="document-card clearfix">
+            <h2>"Мурино"</h2>
+            <div class="photo-wrap">
+                <img src="Murino.jpg" alt="[FOGI]">
+            </div>
+            <div class="document-content">
+                Мурино это сеть бесконечных многоэтажек полных ужаса,хоть и есть другие места по типу огорода,основную часть Мурино всё же составляют подвалы.Удачи тут выжить и найти порталы в другие измерения.
+            </div>
+        </article>
+
+        <article class="document-card clearfix">
+            <h2>Объект №1 "Фоги"</h2>
+            <h3>Обитание:Всё мурино</h3>
+            <div class="photo-wrap">
+                <img src="fogi.jpg" alt="[FOGI]">
+            </div>
+            <div class="document-content">
+                Фоги появились в Мурино и были нацелены на то чтоб убивать ч и друнов,но со временем некоторые фоги начали испытывать жалость к ч и друнам,за ними закрепилось название фоги.Вторая же часть фогов осталась также негативна по отношению к ч и друнам и начала на замену прошлым фогам призывать других сущностей,зовут злых фогов на данный момент The fog'и.
+            </div>
+        </article>
+
+        <article class="document-card clearfix">
+            <h2>Объект №2 "Ч"</h2>
+            <h3>Обитание:Всё мурино</h3>
+            <div class="photo-wrap">
+                <img src="ch.jpg" alt="[STRANGER_CH]">
+            </div>
+            <div class="document-content">
+                Не понятно откуда появилось данное название но ходят слухи что из за опечатки в слове "Я". Ч - это единственный страник с которым всегда происходят странные вещи и от его лица мы узнаем о всех Муринских новостях.Обычно он держится рядом с друнами,но можно увидеть как он убегает от The Fog'ов или ходит в госте к бабушке (бобу).
+            </div>
+        </article>
+
+        <article class="document-card clearfix">
+            <h2>Объект №3 "Друны"</h2>
+            <h3>Обитание:Всё мурино</h3>
+            <div class="photo-wrap">
+                <img src="drun.jpg" alt="[DRUN]">
+            </div>
+            <div class="document-content">
+                Друны это второй тип живущих в Мурино,они почти как Ч,но в отличии от Ч друны живут однотипную жизнь - универ,общага,сон.
+                Это их выматывает и некоторые из них впадают в эмоциональный кризис.Но некоторым друнам надоело жить однотипно и они пошли убивать фогов.Многие друны отсеились,но им удалось перебить большинство фогов,хоть фоги и добрые,но если The fog замечал друна с фогом он убивал и фога и друна.
+            </div>
+        </article>
+
+         <article class="document-card clearfix">
+            <h2>Объект №4 "Бабушка ч (Боб)"</h2>
+            <h3>Обитание:92 подъезд,8867 этаж,кв №72639</h3>
+            <div class="photo-wrap">
+                <img src="bob.jpg" alt="[BABA]">
+            </div>
+            <div class="document-content">
+                Боб это бабушка ч живущая на верхних этажах мурино,она любит готовить чай и есть человечину с человечискими ногами,одета она в новый стильный платочек и в модные очки,по ней и не скажешь,что она ест людей.Хотя у старшего поколения в мурино присутствует давняя привычка есть человечину.
+            </div>
+        </article>
+
+         <article class="document-card clearfix">
+            <h2>Объект №5 "Серая пакостная птица"</h2>
+            <h3>Обитание:Всё мурино</h3>
+            <div class="photo-wrap">
+                <img src="bird1.jpg" alt="[BIRD]">
+            </div>Серая птица в отличии от белой лучше поет(так что у друнов и у ч вытекает кровь из ушей).Понять что это точно она можно по яичнице на голове.Призывается она пакостным зайцем и помогает ему уничтожить вкусность и начать эру кислости.
+            <div class="document-content">
+                
+            </div>
+        </article>
+
+         <article class="document-card clearfix">
+            <h2>Объект №6 "Культурная пакостная птица"</h2>
+            <h3>Обитание:Всё мурино</h3>
+            <div class="photo-wrap">
+                <img src="bird2.jpg" alt="[BIRD2]">
+            </div>
+            <div class="document-content">
+                Культурная пакостная птица отличается от своего собрата тем,что хуже поет,но лучше танцует,вдвоем они образуют своё маленькое выступление где серая поёт,а культурная танцует.Также как и серая пакостная птица культурная пакостная птица призывается пакостным зайцем для завершения эры вкусности. 
+            </div>
+        </article>
+
+        <article class="document-card clearfix">
+            <h2>Объект №7 "Охраник фог"</h2>
+            <h3>Обитание:Муринская школа</h3>
+            <div class="photo-wrap">
+                <img src="secfog.jpg" alt="[FOG]">
+            </div>
+            <div class="document-content">
+                Устроился на охрану в школе,он добрый только если ты не забыл пропуск.
+            </div>
+        </article>
+
+<article class="document-card clearfix">
+            <h2>Объект №8 "Повар фог"</h2>
+            <h3>Обитание:Муринская школа</h3>
+            <div class="photo-wrap">
+                <img src="amafog.jpg" alt="[FOG]">
+            </div>
+            <div class="document-content">
+                Устроился поваром для того,чтоб у вас в школе была вкусная нога или рука.Если сжалится то может перемолоть младшеклассника в вкусный фарш и дать вам на обед.
+            </div>
+        </article>
+
+<article class="document-card clearfix">
+            <h2>Объект №9 "Друнный коллайдер"</h2>
+            <h3>Обитание:395 этаж</h3>
+            <div class="photo-wrap">
+                <img src="collader.jpg" alt="[COLLADER]">
+            </div>
+            <div class="document-content">
+                Также как и обычный коллайдер только может разогнать не частицы,а песню бэм бэм бэм до скорости света,чтоб Fog'и сжалились над друннами,которые сидят в этом коллайдере.
+            </div>
+        </article>
+
+        <article class="document-card clearfix">
+            <h2>Объект №10 "Мяучелло"</h2>
+            <h3>Обитание:Всё Мурино</h3>
+            <div class="photo-wrap">
+                <img src="myauchello.jpg" alt="[myauchello]">
+            </div>
+            <div class="document-content">
+                Мяучелло это муринский кот,он агрессивно настроен по отношению к ч и друнам и способен вас убить.Обычно он появляется в подвалах.Когда он появляется он танцует некоторое время прежде чем растерзать вас на части и оставить на съедение пакостным птицам.
+            </div>
+        </article>
+
+  <article class="document-card clearfix">
+            <h2>Объект №11 "Курьер"</h2>
+            <h3>Обитание:Всё Мурино</h3>
+            <div class="photo-wrap">
+                <img src="delieveryguy.jpg" alt="[HI]">
+            </div>
+            <div class="document-content">
+                Курьер это максимально экстримальный друн,ему в кайф убегать от The Fog'ов и лазить на безумно высокие этажи.И всё это ради того,чтоб ваша еда доехала до вас целиком.
+            </div>
+        </article>
+
+  <article class="document-card clearfix">
+            <h2>Объект №12 "Муринский оркестр Бэм"</h2>
+            <h3>Обитание:Сцена Мурино</h3>
+            <div class="photo-wrap">
+                <img src="PAM.jpg" alt="[PAM]">
+            </div>
+            <div class="document-content">
+                Самый долгожданый концерт для всех жителей мурино это тот концерт где есть оркестр Бэм.Их звучание просто прекрасно,на сцену выходит дирижёр фог,а за ним стоят певцы ч и друны.Их звучание будет получше вашего бтс и другого кей-попа.
+        </article>
+
+  <article class="document-card clearfix">
+            <h2>Объект №13 "Учитель фог"</h2>
+            <h3>Обитание:Муринская школа</h3>
+            <div class="photo-wrap">
+                <img src="tfog.jpg" alt="[FOG]">
+            </div>
+            <div class="document-content">
+                Учит детей кругозору,но если они не будут хотеть получать знания,он их съест.
+            </div>
+        </article>
+
+ <article class="document-card clearfix">
+            <h2>Объект №14 "Муринский серафим"</h2>
+            <h3>Обитание:3395е666 этаж</h3>
+            <div class="photo-wrap">
+                <img src="seraph.jpg" alt="[I SEE YOU]">
+            </div>
+            <div class="document-content">
+                Он наблюдает за вами,он наблюдает за всеми.Те кто видел его и вернулся на более низкие этажи сошли с ума, он постояно появляется в их снах и шепсет им что то на ухо.
+            </div>
+        </article>
+
+ <article class="document-card clearfix">
+            <h2>Объект №15 "Собака Ч (Колбаска)"</h2>
+            <h3>Обитание:Раньше всё Мурино,сейчас мертва</h3>
+            <div class="photo-wrap">
+                <img src="chdog.jpg" alt="[AF]">
+            </div>
+            <div class="document-content">
+                Появлялась только в одной серии на которой видно как фог сделал из неё муринскую шаверму.
+            </div>
+        </article>
+        
+ <article class="document-card clearfix">
+            <h2>Объект №16 "Шаурмечная Шаверма по-Мурински"</h2>
+            <h3>Обитание: Улица</h3>
+            <div class="photo-wrap">
+                <img src="shava.jpg" alt="[YUMMY]">
+            </div>
+            <div class="document-content">
+                Именно здесь и сделали из собаки Ч шаурму,помимо шаурмы из собак здесь можно купить баба чай и фог в кляре,всем друнам нравится так сильно,что они умирают от пищевого отравления.
+            </div>
+        </article>
+
+ <article class="document-card clearfix">
+            <h2>Объект №17 "Урок музыки"</h2>
+            <h3>Обитание:Всё Мурино</h3>
+            <div class="photo-wrap">
+                <img src="schoolm.jpg" alt="[PAMPAMPAM]">
+            </div>
+            <div class="document-content">
+                Если фог вас заставляет побитбоксить,то вы обязаны набитбоксить идентично как в оригинале,тогда он вас отпустит,если вы отказываетесь или поёте с ошибками то фог вас убьёт.В один момент фог начинает говорить быстрее,что усложняет задачу битбоксить идеально,если вы не ускоретесь он вас убьёт.
+            </div>
+        </article>
+
+ <article class="document-card clearfix">
+            <h2>Объект №18 "Друн не умеющий петь"</h2>
+            <h3>Обитание:Всё Мурино</h3>
+            <div class="photo-wrap">
+                <img src="drundaun.jpg" alt="[dolbaeb]">
+            </div>
+            <div class="document-content">
+                Такие обычно живут до первого урока музыки,ведь после ускорения фога моментально перестают битбоксить  или начинают ошибаться,как итог их разрывает фог.
+            </div>
+        </article>
+
+<article class="document-card clearfix">
+            <h2>Объект №19 "Зелёный фог"</h2>
+            <h3>Обитание:1583 этаж</h3>
+            <div class="photo-wrap">
+                <img src="greenfog.jpg" alt="[FOG]">
+            </div>
+            <div class="document-content">
+                Неизвестно ничего,встречался в одной серии,после чего больше не появлялся,в той серии вёл себя пасивно.
+            </div>
+        </article>
+        
+<article class="document-card clearfix">
+            <h2>Объект №20 "Неопознаный монстр"</h2>
+            <h3>Обитание:1583 этаж</h3>
+            <div class="photo-wrap">
+                <img src="monstry.jpg" alt="[SCARY!]">
+            </div>
+            <div class="document-content">
+               Появился в той же серии,что и зелёный фог.Также неизвестно ничего,да ещё и фото в отвратительном качестве.
+            </div>
+        </article>
+
+<article class="document-card clearfix">
+            <h2>Объект №21 "Зелёный трамвай"</h2>
+            <h3>Обитание:1583 этаж</h3>
+            <div class="photo-wrap">
+                <img src="greentram.jpg" alt="[CHUCHU]">
+            </div>
+            <div class="document-content">
+                Появлялся в той же серии,что зелёный фог и неопознаный монстр,попытался переехать ч.Видимо у трамвая есть свой разум.Кто знает сколько ещё секретов хранит 1583 этаж.
+            </div>
+        </article>
+
+        <article class="document-card clearfix">
+            <h2>Объект №22 "Друн без ног"</h2>
+            <h3>Обитание:1582 этаж (в теории всё Мурино)</h3>
+            <div class="photo-wrap">
+                <img src="drunleg.jpg" alt="[SMERT]">
+            </div>
+            <div class="document-content">
+                Друн которому оторвало ноги,он уже истёк кровью и лежит полумёртвый.Появлялся в той же серии где были трамвай,неопознаный монстр и зелёный фог.В теории таких друнов могут быть тысячи по всему Мурино.
+            </div>
+        </article>
+
+  <article class="document-card clearfix">
+            <h2>Объект №23 "Fog is dancing"</h2>
+            <h3>Обитание:-19 этаж</h3>
+            <div class="photo-wrap">
+                <img src="fogodance.jpg" alt="[FOG]">
+            </div>
+            <div class="document-content">
+                Когда ч упал с 462 этажа и упал на -19 он заметил странного фога который танцевал и говорил: Танцуем все,уда уда.Фог так и не тронул ч,а продолжил танцевать.С того момента его обнаруживали ещё несколько раз всё на том же -19 этаже.
+            </div>
+        </article>
+
+  <article class="document-card clearfix">
+            <h2>Объект №24 "Пакостный заяц"</h2>
+            <h3>Обитание:Всё Мурино</h3>
+            <div class="photo-wrap">
+                <img src="pakost.jpg" alt="[CHASIKI]">
+            </div>
+            <div class="document-content">
+               Пакостный заяц - нейтральная сущность,она может быть агрессивной как к фогам,так и к ч с друнами.Хоть пакость и слабее большинства фогов,но он специально ищет фогов слабее него,чтоб растерзать их.Также может заставить битбоксить ч с друном.Он способен останавливать время на короткий промежуток.Также способен призывать двух пакостных птиц чтоб закончить эру вкусности и начать эру пакости.
+            </div>
+        </article>
+
+  <article class="document-card clearfix">
+            <h2>Объект №25 "Император Мурино"</h2>
+            <h3>Обитание:Верхние этажи Мурино</h3>
+            <div class="photo-wrap">
+                <img src="imperor.jpg" alt="[ZHIR]">
+            </div>
+            <div class="document-content">
+                Подставной император Мурино для тех друнов которые не хотят признавать власть фогов.Когда то был обычным друном,но потом его начали кормить и он вырос до таких размеров,что некоторые друны начали считать его своим императором и кормить всё больше.
+            </div>
+        </article>
+
+  <article class="document-card clearfix">
+            <h2>Объект №26 "Кормление Императора"</h2>
+            <h3>Обитание:Верхние этажи Мурино</h3>
+            <div class="photo-wrap">
+                <img src="imperorAM.jpg" alt="[AMAMAM]">
+            </div>
+            <div class="document-content">
+                Друны выстраиваются в очередь и передают императору вкусность.Чтоб он не начал терять свой вес им нужно кормить его беспрерывно.Иначе он потеряет вес и многие перестанут считать его императором Мурино.
+            </div>
+        </article>
+
+  <article class="document-card clearfix">
+            <h2>Объект №27 "Сердце Мурино"</h2>
+            <h3>Обитание:Подвал Мурино</h3>
+            <div class="photo-wrap">
+                <img src="MURINOBOSS.jpg" alt="[BOSS]">
+            </div>
+            <div class="document-content">
+               Этот объект был недавно обнаружен ч,пока не доказано что именно он является сердцем Мурино,но его тело и статуи богов рядом с ним нам намекают на это.Скорее всего его невозможно убить.Также неизвестно как он относится к Ч и друнам,но в тот раз он не съел Ч.
+            </div>
+        </article>
+
+  <article class="document-card clearfix">
+            <h2>Объект №28 "Вкусность"</h2>
+            <h3>Обитание:Огород Мурино</h3>
+            <div class="photo-wrap">
+                <img src="AM.jpg" alt="[AM]">
+            </div>
+            <div class="document-content">
+                Вкусность - Муринская тыква которая очень нравится пакостным птицам,они постояно хотят её съесть.Друны охраняют вкусность чтоб её не съели,хоть таких тыкв и много,но они не размножаются.Из-за этого чем меньше вкусностей тем ближе эра пакости.Когда съедят все тыквы начнётся эра пакости.
+            </div>
+        </article>
+
+  <article class="document-card clearfix">
+            <h2>Объект №29 "Неизвестная аномалия"</h2>
+            <h3>Обитание:Нижние этажи Мурино</h3>
+            <div class="photo-wrap">
+                <img src="Uknown.jpg" alt="[BIGBOSS]">
+            </div>
+            <div class="document-content">
+                Неизвестная аномалия с которой столкнулся ч при обыскивании нижних этажей.Предположительно опасная,но ч отказывается коментировать встречу с этой аномалией,так что нам неизвестно её поведение к друнам.
+            </div>
+        </article>
+
+  <article class="document-card clearfix">
+            <h2>Объект №30 "Фогомакс"</h2>
+            <h3>Обитание:Всё Мурино</h3>
+            <div class="photo-wrap">
+                <img src="Maxfog.jpg" alt="[MAX]">
+            </div>
+            <div class="document-content">
+               Фогомакс - неизвестный фог который появлялся всего в нескольких местах.Это голлограма на здании в котором нам приказывают скачать макс,последствия тех кто не скачает макс неизвестны.Предположительно за ними приходят fog'и.
+            </div>
+        </article>
+
+  <article class="document-card clearfix">
+            <h2>Объект №31 "Ёж красный"</h2>
+            <h3>Обитание:Муринский лес</h3>
+            <div class="photo-wrap">
+                <img src="redheg.jpg" alt="[KRASNIY]">
+            </div>
+            <div class="document-content">
+             Ёж красный это муринский вид ежей которые негативно настроены по отношению к ч и друнам.Если его покормить он начнёт стремительно расти.
+            </div>
+        </article>
+    
+  <article class="document-card clearfix">
+            <h2>Объект №32 "Магазин светофор"</h2>
+            <h3>Обитание:Всё Мурино</h3>
+            <div class="photo-wrap">
+                <img src="svetm.jpg" alt="[MYASO]">
+            </div>
+            <div class="document-content">
+               Магазин светофор это магазин где продаются самые вкусные продукты,они настолько вкусные,что друны умирают от отравления.Также не в коем случае не заходите в мясной отдел,если не хотите чтоб из вас сделали мясо и продали фогам.
+            </div>
+        </article>
+
+  <article class="document-card clearfix">
+            <h2>Объект №33 "Дурн"</h2>
+            <h3>Обитание:Всё Мурино</h3>
+            <div class="photo-wrap">
+                <img src="durn.jpg" alt="[tupen]">
+            </div>
+            <div class="document-content">
+               Дурн - тупой друн ударившейся головой или покалеченный фогами.Ему повредили голову,что сказалось на его разуме и интеллекте.Он дружелюбен к друнам и Ч.
+            </div>
+        </article>
+
+  <article class="document-card clearfix">
+            <h2>Объект №34 "Чиливик"</h2>
+            <h3>Обитание:35838 этаж</h3>
+            <div class="photo-wrap">
+                <img src="chilivik.jpg" alt="[chel]">
+            </div>
+            <div class="document-content">
+              Раньше никто его никогда не видел,но в последние полгода участились случаи встречи чиливика на 35838 этаже,не понятно почему он появляется именно там,но в других областях его не видели. 
+            </div>
+        </article>
+
+  <article class="document-card clearfix">
+            <h2>Объект №35 "Жури фоги"</h2>
+            <h3>Обитание:Сцена Мурино</h3>
+            <div class="photo-wrap">
+                <img src="zhfogi.jpg" alt="[FOG]">
+            </div>
+            <div class="document-content">
+               Жури фоги это фоги оценивающие выступления друнов и Ч.Если им не понравится ваше выступление то вас разорвут на части и съедят.
+            </div>
+        </article>
+
+  <article class="document-card clearfix">
+            <h2>Объект №36 "Шоу Голос"</h2>
+            <h3>Обитание:Сцена Мурино</h3>
+            <div class="photo-wrap">
+                <img src="golos.jpg" alt="[SHOU]">
+            </div>
+            <div class="document-content">
+               Шоу голос проходит раз в полгода,на нём союираются друны и их оценивают фоги,если фогам не нравится номер друнов,они разрывают и съедают их.На шоу выступает от 30 до 45 друнов.
+            </div>
+        </article>
+
+  <article class="document-card clearfix">
+            <h2>Объект №37 "Военные фоги"</h2>
+            <h3>Обитание:Муринская армия</h3>
+            <div class="photo-wrap">
+                <img src="wfog.jpg" alt="[FOG]">
+            </div>
+            <div class="document-content">
+               Военные фоги живут в армии и проходят там военную подготовку,учаться стрелять и уничтожать друнов,туда могут попасть только fog'и.Обычным фогам вход туда категорически запрещён.
+            </div>
+        </article>
+
+  <article class="document-card clearfix">
+            <h2>Объект №38 "Генерал фог"</h2>
+            <h3>Обитание:Муринская армия</h3>
+            <div class="photo-wrap">
+                <img src="gfog.jpg" alt="[FOG]">
+            </div>
+            <div class="document-content">
+               Генерал фог руководит военными фогами при случае войны,а так сидит у себя в кабинете и смотрит серии про Мурино с друном и ч.
+            </div>
+        </article>
+
+  <article class="document-card clearfix">
+            <h2>Объект №39 "ZЧ"</h2>
+            <h3>Обитание:Всё мурино</h3>
+            <div class="photo-wrap">
+                <img src="ZCH.jpg" alt="[CHO BLYAT]">
+            </div>
+            <div class="document-content">
+              Брат ч,обычно смотрит как фог отправляет друнов на качеле в космос.
+            </div>
+        </article>
+
+  <article class="document-card clearfix">
+            <h2>Объект №40 "Fog Wayder"</h2>
+            <h3>Обитание:Космос,Всё Мурино</h3>
+            <div class="photo-wrap">
+                <img src="wayfog.jpg" alt="[FOG]">
+            </div>
+            <div class="document-content">
+               Бог фогов,живёт в космосе.Иногда навещает Мурино.Его сила неограничена,он может свергнуть любого.
+            </div>
+        </article>
+
+  <article class="document-card clearfix">
+            <h2>Объект №41 "Неизвестный монстр"</h2>
+            <h3>Обитание:Рядом с бункером(Подвал Мурино)</h3>
+            <div class="photo-wrap">
+                <img src="ukn.jpg" alt="[FOG]">
+            </div>
+            <div class="document-content">
+              Неизвестно ничего,друны которые видели это исчезли.Те друны опоздали в бункер и это существо вместе со вторым также неизвестным существом видимо растерзали тех друнов.
+            </div>
+        </article>
+
+  <article class="document-card clearfix">
+            <h2>Объект №42 "Неизвестный монстр"</h2>
+            <h3>Обитание:Рядом с бункером(Подвал Мурино)</h3>
+            <div class="photo-wrap">
+                <img src="ukn1.jpg" alt="[FOG]">
+            </div>
+            <div class="document-content">
+               Как и с прошлым объектом ничего неизвестно,но он вместе с прошлым объектом растерзали друнов.
+            </div>
+        </article>
+
+  <article class="document-card clearfix">
+            <h2>Объект №43 "Ливт"</h2>
+            <h3>Обитание:Лифт</h3>
+            <div class="photo-wrap">
+                <img src="livt.jpg" alt="[UEBAN]">
+            </div>
+            <div class="document-content">
+               Ливт - это уникальный друн который в одиночку бесконечно катается на муринских лифтах.Проехал больше этажей чем 5 миллионов друннов вместе взятые.
+            </div>
+        </article>
+
+  <article class="document-card clearfix">
+            <h2>Объект №44 "Дпун"</h2>
+            <h3>Обитание:Лифт</h3>
+            <div class="photo-wrap">
+                <img src="dpun.jpg" alt="[UEBAN]">
+            </div>
+            <div class="document-content">
+               Дпун - это друн который застрял вместе с ливтом в лифте,ему приходится также много кататься на лифте.Он проклинает этот мир и Мурино,хотя кто его не проклинает.
+            </div>
+        </article>
+        
+  <article class="document-card clearfix">
+            <h2>Объект №45 "Вздутость"</h2>
+            <h3>Обитание:19638 этаж</h3>
+            <div class="photo-wrap">
+                <img src="vzdutost.jpg" alt="[UEBAN]">
+            </div>
+            <div class="document-content">
+               Вдутость это зачарованный пакостным зайцем друн,он скитается по 19638 этажу в надежде найти пакостного зайца,чтобы он снял с него проклятие.
+            </div>
+        </article>
+
+  <article class="document-card clearfix">
+            <h2>Объект №46 "Шляпа"</h2>
+            <h3>Обитание:Всё Мурино</h3>
+            <div class="photo-wrap">
+                <img src="shlyap.jpg" alt="[BURMALDA]">
+            </div>
+            <div class="document-content">
+               Шляпа это самая популярная еда для друнов и ч,где бы ты не был все питаются шляпой.
+            </div>
+        </article>
+
+  <article class="document-card clearfix">
+            <h2>Объект №47 "The fog is coming"</h2>
+            <h3>Обитание:Всё Мурино</h3>
+            <div class="photo-wrap">
+                <img src="tfic.jpg" alt="[FOG]">
+            </div>
+            <div class="document-content">
+               Самый сильный фог не считая фог вейдера,спомобен призывать толпы fog'ов.Его полная сила неизвестна,но он способен перемалывать друнов буквально щелчком пальцев.
+            </div>
+        </article>
+
+  <article class="document-card clearfix">
+            <h2>Объект №48 "Wish I knew"</h2>
+            <h3>Обитание:Подвал Мурино</h3>
+            <div class="photo-wrap">
+                <img src="wishik.jpg" alt="[BURMALDA]">
+            </div>
+            <div class="document-content">
+               Когда поёт песню безопасный,но после окончания песни он переходит в активную фазу и перемалывает всех друнов на своём пути.Радует только одно,что он находиться на низких этажах Мурино и чтоб его найти нужно постараться.
+            </div>
+        </article>
+
+  <article class="document-card clearfix">
+            <h2>Объект №49 "Мармеладность"</h2>
+            <h3>Обитание:Всё Мурино</h3>
+            <div class="photo-wrap">
+                <img src="marmel.jpg" alt="[BURMALDA]">
+            </div>
+            <div class="document-content">
+               Мармеладность это более редкая,но более значимая вкусность.Из-за основного обитания на высоких этажах 90% мармеладности уничтожено,остались только те которые живут на низких этажах и те кого защищают друны.
+            </div>
+        </article>
+
+  <article class="document-card clearfix">
+            <h2>Объект №50 "Корэн"</h2>
+            <h3>Обитание:Муринская школа</h3>
+            <div class="photo-wrap">
+                <img src="koren.jpg" alt="[BURMALDA]">
+            </div>
+            <div class="document-content">
+               Друн который ненавидит математику,в итоге часто получает от математички.Постояно кричит и убегает от неё.
+            </div>
+        </article>
+
+    </main>
+
+    <footer>
+        <p>DEXER'S ANOMALLY RESEARCH GROUP // MURINO// 2026</p>
+    </footer>
+
+    <script>
+function runSearch() {
+    const query = document.getElementById('searchInput').value.toLowerCase();
+    const cards = document.querySelectorAll('.document-card');
+
+    cards.forEach(card => {
+        const title = card.querySelector('h2').innerText.toLowerCase();
+        const content = card.querySelector('.document-content').innerText.toLowerCase();
+
+        // Если нашли совпадение в заголовке или тексте
+        if (title.includes(query) || content.includes(query)) {
+            card.style.display = "block";
+        } else {
+            card.style.display = "none";
+        }
+    });
+}
+
+// Поиск по нажатию Enter в поле ввода
+document.getElementById('searchInput').addEventListener('keypress', function (e) {
+    if (e.key === 'Enter') {
+        runSearch();
+    }
+});
+</script>
+
+</body>
+</html>
